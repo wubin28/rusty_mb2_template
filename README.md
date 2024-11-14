@@ -20,3 +20,21 @@ gdb-multiarch target/thumbv7em-none-eabihf/debug/{{project-name}}
 (gdb) continue
 (gdb) quit
 ```
+
+# How to run the code on macOS after generating a new project
+
+## On terminal 1:
+```
+cd {{project-name}}
+cargo embed
+```
+
+## On terminal 2:
+```
+cd {{project-name}}
+arm-none-eabi-gdb target/thumbv7em-none-eabihf/debug/{{project-name}}
+(gdb) target remote :1337
+(gdb) break main
+(gdb) continue
+(gdb) quit
+```
