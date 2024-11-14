@@ -41,13 +41,13 @@ arm-none-eabi-gdb target/thumbv7em-none-eabihf/debug/{{project-name}}
 
 # How to run the code on Windows 11 after generating a new project
 
-## On terminal 1:
+## On PowerShell 1:
 ```
 cd {{project-name}}
 cargo embed --probe <VID:PID:SN>
 ```
 
-## On terminal 2:
+## On PowerShell 2:
 ```
 cd {{project-name}}
 arm-none-eabi-gdb target/thumbv7em-none-eabihf/debug/{{project-name}}
