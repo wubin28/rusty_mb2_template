@@ -1,17 +1,31 @@
-# How to generate a new project for writing embedded rust code for the micro:bit v2
+# An embedded Rust project template for the micro:bit v2
+
+## How to generate a new project
 ```
 cargo generate wubin28/rusty_mb2_template
 ```
 
-# How to run the code on Ubuntu after generating a new project
+## How to run the code
 
-## On terminal 1:
+### On Ubuntu and macOS:
+```
+cargo run
+```
+
+### On Windows 11:
+```
+cargo run --probe <VID:PID:SN>
+```
+
+## How to debug the code on Ubuntu
+
+### On terminal 1:
 ```
 cd {{project-name}}
 cargo embed
 ```
 
-## On terminal 2:
+### On terminal 2:
 ```
 cd {{project-name}}
 gdb-multiarch target/thumbv7em-none-eabihf/debug/{{project-name}}
@@ -21,15 +35,15 @@ gdb-multiarch target/thumbv7em-none-eabihf/debug/{{project-name}}
 (gdb) quit
 ```
 
-# How to run the code on macOS after generating a new project
+## How to debug the code on macOS
 
-## On terminal 1:
+### On terminal 1:
 ```
 cd {{project-name}}
 cargo embed
 ```
 
-## On terminal 2:
+### On terminal 2:
 ```
 cd {{project-name}}
 arm-none-eabi-gdb target/thumbv7em-none-eabihf/debug/{{project-name}}
@@ -39,15 +53,15 @@ arm-none-eabi-gdb target/thumbv7em-none-eabihf/debug/{{project-name}}
 (gdb) quit
 ```
 
-# How to run the code on Windows 11 after generating a new project
+## How to debug the code on Windows 11
 
-## On PowerShell 1:
+### On PowerShell 1:
 ```
 cd {{project-name}}
 cargo embed --probe <VID:PID:SN>
 ```
 
-## On PowerShell 2:
+### On PowerShell 2:
 ```
 cd {{project-name}}
 arm-none-eabi-gdb target/thumbv7em-none-eabihf/debug/{{project-name}}
